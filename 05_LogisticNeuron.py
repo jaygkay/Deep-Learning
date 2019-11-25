@@ -31,6 +31,6 @@ class LogisticNeuron:
                 self.b -= b_grad                     # 절편 업데이트 
                 
     def predict(self, x):
-        z = [self.fwrd(x_i) for x_i in x]              # 선형 함수 적용
+        z = [self.fwrd(x_i) for x_i in x]            # 선형 함수 적용
         a = self.activation(np.array(z))             # 활성화 함수 적용
         return a > 0.5                               # 임계 함수
