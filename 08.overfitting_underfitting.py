@@ -28,7 +28,7 @@ class SingleLayer_tradeoff:
             z = self.fwrd(x_val[i])
             a = self.activation(z)
             a = np.clip(a, 1e-10, 1-1e-10)
-            val_loss += -(y_val[i]*np.log(a) + (1-y)*np.log(1-a))
+            val_loss += -(y_val[i]*np.log(a) + (1-y_val[i])*np.log(1-a))
         self.val_loss.append(val_loss / len(y_val))
         
     def fit(self, x, y, epochs = 100, x_val = None, y_val = None):
@@ -48,7 +48,7 @@ class SingleLayer_tradeoff:
                 self.b -= b_grad                                # 절편 업데이트
                 self.w_history.append(self.w.copy())            # 가중치 기록
                 a = np.clip(a, 1e-10, 1-1e-10)                  # 안전한 로그 계산을 위한 클리핑
-                loss += -(y[i]*np.log(a) + (1-y)*np.log(1-a))   # 손실 함수 업데이트
+                loss += -(y[i]*np.log(a) + (1-y[i])*np.log(1-a))   # 손실 함수 업데이트
             self.loss.append(loss / len(y))                     # epoch 마다 평균 손실 기록
             self.update_val_loss(x_val, y_val)                  # 검증 세트에 대한 손실 계산
                 
