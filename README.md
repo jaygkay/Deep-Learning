@@ -8,6 +8,6 @@
 - Logistic Neuron with Gradient Descent
 - Logistic Sigle Layer with SGD
 - Signle Layer on Validation-set
+- Overfitting vs Underfitting
 - Single Layer with Regulizations
-- Regulizations
 
