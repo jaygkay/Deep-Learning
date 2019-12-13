@@ -1,6 +1,6 @@
 ### Deep Learning Algorithm
 
-Implementing and building deep learning algorithms.
+#### Implementing and building customed deep learning algorithms
 - TensorFlow and Keras implementation
 - XOR Gate
 - Evaluation
